@@ -1,22 +1,39 @@
 # Lesion-Toads 
 
-[Nypipe](http://www.mit.edu/~satra/nipype-nightly/index.html) interface for the Lesion-toads approach (Topology-preserving approach to the segmentation of brain images with multiple sclerosis lesions) proposed by [Shiee et al. 2010](http://www.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&retmode=ref&cmd=prlinks&id=19766196).
+This is an implementation of running [Lesion-Toads](https://github.com/sergivalverde/lesion-toads) on Iridis 5, the supercomputer at University of Southampton. Lesion-Toads is a [Nypipe](http://www.mit.edu/~satra/nipype-nightly/index.html) interface for the Lesion-toads approach (Topology-preserving approach to the segmentation of brain images with multiple sclerosis lesions) proposed by [Shiee et al. 2010](http://www.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&retmode=ref&cmd=prlinks&id=19766196).
 
 ## Install 
 
 - This interface is based on [Nipype](http://www.mit.edu/~satra/nipype-nightly/index.html). Follow the instructions of the authors [webpage](http://www.mit.edu/~satra/nipype-nightly/users/install.html).
 
-- Lesion-toads has to be installed following the provided [manual](http://www.iacl.ece.jhu.edu/~nshiee/research/LesionTOADS_manual.pdf), which is run from the [Mipav](http://mipav.cit.nih.gov/) environment. 
+- Lesion-toads has to be installed following steps below, which is run from the [MIPAV](http://mipav.cit.nih.gov/) environment. 
+ - **Note**: MIPAV version `8.0.1 Linux-amd64` can be run on Iridis 5.
 
-- Then, be sure that MIPAV and the corresponding libraries are in the path. Tipically, MIPAV is installed in the home folder.  
+- Install Plugins:
+ - `CBSTools-release-3.0.8-160229.jar`
+ - `JIST-CRUISE-2014Dec12-03-37PM.jar`
+ - `TOADS-CRUISE_2014_May_05_R4c.jar`
+ - `native-lib-loader-2.3.5.jar`
+ - `slf4j-api-1.7.30.jar`
+
+- Rebuild JIST Library
+
+- Then, be sure that MIPAV and the corresponding libraries are in the path:
 
 ```
-JAVALIB=/home/ThisUser/mipav/jre/Contents/Home/lib/ext/
-# location of the MIPAV installation to use  
+# location of the MIPAV installation to use
 MIPAV=/home/ThisUser/mipav
-# location of the plugin installation to use   
+
+# location of the plugin installation to use
 # please replace 'ThisUser' by your user name
 PLUGINS=/home/ThisUser/mipav/plugins
+
+# JAVA
+JAVALIB=/home/ThisUser/mipav/jre/lib
+export PATH=$PATH:/home/ThisUser/mipav/jre/bin/
+
+# https://nipype.readthedocs.io/en/0.11.0/users/mipav.html
+export CLASSPATH=$JAVALIB/*:$MIPAV:$MIPAV/lib/*:$PLUGINS
 ```
 
 
@@ -26,6 +43,7 @@ So far, the implementation is simple. Just run the method using the provided fun
 
 ```python
 from lesion_toads import *
+import xvfbwrapper
 import os
 
 # database dependent
