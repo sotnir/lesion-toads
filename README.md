@@ -7,14 +7,14 @@ This is an implementation of running [Lesion-Toads](https://github.com/sergivalv
 - This interface is based on [Nipype](http://www.mit.edu/~satra/nipype-nightly/index.html). Follow the instructions of the authors [webpage](http://www.mit.edu/~satra/nipype-nightly/users/install.html).
 
 - Lesion-toads has to be installed following steps below, which is run from the [MIPAV](http://mipav.cit.nih.gov/) environment. 
- - **Note**: MIPAV version `8.0.1 Linux-amd64` can be run on Iridis 5.
+   - **Note**: MIPAV version `8.0.1 Linux-amd64` can be run on Iridis 5.
 
 - Install Plugins:
- - `CBSTools-release-3.0.8-160229.jar`
- - `JIST-CRUISE-2014Dec12-03-37PM.jar`
- - `TOADS-CRUISE_2014_May_05_R4c.jar`
- - `native-lib-loader-2.3.5.jar`
- - `slf4j-api-1.7.30.jar`
+   - `CBSTools-release-3.0.8-160229.jar`
+   - `JIST-CRUISE-2014Dec12-03-37PM.jar`
+   - `TOADS-CRUISE_2014_May_05_R4c.jar`
+   - `native-lib-loader-2.3.5.jar`
+   - `slf4j-api-1.7.30.jar`
 
 - Rebuild JIST Library
 
