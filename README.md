@@ -18,7 +18,7 @@ This is an implementation of running [Lesion-Toads](https://github.com/sergivalv
 
 - Rebuild JIST Library
 
-- Then, be sure that MIPAV and the corresponding libraries are in the path:
+- Then, be sure that the paths for MIPAV, the corresponding plugins and Java CLASSPATH are specified:
 
 ```
 # location of the MIPAV installation to use
