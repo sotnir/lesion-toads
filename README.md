@@ -42,7 +42,7 @@ export CLASSPATH=$JAVALIB/*:$MIPAV:$MIPAV/lib/*:$PLUGINS
 So far, the implementation is simple. Just run the method using the provided function. Only the T1 and FLAIR images are available as options. The rest of parameters are run with default values.
 
 ```python
-from lesion_toads import *
+from lesion_toads_iridis5 import *
 import xvfbwrapper
 import os
 
